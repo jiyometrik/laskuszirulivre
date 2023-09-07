@@ -15,25 +15,25 @@
 % \RequirePackage{AlegreyaSans}
 \RequirePackage{microtype}
 
-\newcommand{\seda}[1]{\textbf{#1}}
-\newcommand{\vikti}[1]{\textit{#1}}
+\providecommand{\seda}[1]{\textbf{#1}}
+\providecommand{\vikti}[1]{\textit{#1}}
 
-\newcommand{\bN}{\mbb{N}}
-\newcommand{\bC}{\mbb{C}}
-\newcommand{\bR}{\mbb{R}}
-\newcommand{\bQ}{\mbb{Q}}
-\newcommand{\bZ}{\mbb{Z}}
+\providecommand{\bN}{\mbb{N}}
+\providecommand{\bC}{\mbb{C}}
+\providecommand{\bR}{\mbb{R}}
+\providecommand{\bQ}{\mbb{Q}}
+\providecommand{\bZ}{\mbb{Z}}
 
 \RequirePackage{setspace}
 \onehalfspacing
 
-\newcommand{\@mathsect}[3][section]{\csname#1\endcsname[\texorpdfstring{#2}{#3}]{{\boldmath #2}}}
-\newcommand{\msection}[2]{\@mathsect[section]{#1}{#2}}
-\newcommand{\msubsection}[2]{\@mathsect[subsection]{#1}{#2}}
-\newcommand{\msubsubsection}[2]{\@mathsect[subsubsection]{#1}{#2}}
-% \newcommand{\msubsubsection}[2]{\@mathsect[subsubsubsection]{#1}{#2}}
+\providecommand{\@mathsect}[3][section]{\csname#1\endcsname[\texorpdfstring{#2}{#3}]{{\boldmath #2}}}
+\providecommand{\msection}[2]{\@mathsect[section]{#1}{#2}}
+\providecommand{\msubsection}[2]{\@mathsect[subsection]{#1}{#2}}
+\providecommand{\msubsubsection}[2]{\@mathsect[subsubsection]{#1}{#2}}
+% \providecommand{\msubsubsection}[2]{\@mathsect[subsubsubsection]{#1}{#2}}
 
-\newcommand{\silentchapter}[1]{
+\providecommand{\silentchapter}[1]{
 	\chapter*{#1}
 	\markboth{#1}{#1}
 	\addcontentsline{toc}{chapter}{#1}

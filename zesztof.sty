@@ -1,20 +1,20 @@
 \ProvidesPackage{zesztof}
-\usepackage{fontspec}
-\usepackage{amsfonts, amsthm, amsmath, amssymb}
-\usepackage{mathtools}
+\RequirePackage{fontspec}
+\RequirePackage{amsfonts, amsthm, amsmath, amssymb}
+\RequirePackage{mathtools}
 
-\usepackage{siunitx}
-\usepackage{physics}
-\usepackage{pgfplots}
+\RequirePackage{siunitx}
+\RequirePackage{physics}
+\RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\usepackage{tikz-cd}
-\usepackage{xcolor}
+\RequirePackage{tikz-cd}
+\RequirePackage{xcolor}
 
 \setmainfont{Libertinus Serif}
 \setmonofont{Source Code Pro}
 
-% \usepackage{AlegreyaSans}
-\usepackage{microtype}
+% \RequirePackage{AlegreyaSans}
+\RequirePackage{microtype}
 
 \def\bf#1{\textbf{#1}}
 \def\it#1{\textit{#1}}
@@ -25,7 +25,7 @@
 \def\bQ{\mbb{Q}}
 \def\bZ{\mbb{Z}}
 
-\usepackage{setspace}
+\RequirePackage{setspace}
 \onehalfspacing
 
 \newcommand*{\mathsect}[3][section]{\csname#1\endcsname[\texorpdfstring{#2}{#3}]{{\boldmath #2}}}
@@ -39,7 +39,7 @@
 \definecolor{honeydew}{HTML}{E2EFDE}
 \definecolor{HoneyDew}{HTML}{9EA79B}
 
-\usepackage[most]{tcolorbox}
+\RequirePackage[most]{tcolorbox}
 \tcbset{
 	breakable,
 	before skip=\topskip,
@@ -65,7 +65,7 @@
 	coltitle=black,
 }
 
-\usepackage{hyperref}
+\RequirePackage{hyperref}
 \hypersetup{
 	colorlinks=true,
 	breaklinks=true,

@@ -1,0 +1,31 @@
+\documentclass[fontsize=12pt,paper=a4,twoside,numbers=noenddot]{scrbook}
+% \documentclass{willowtreebook}
+\usepackage{zesztof}
+\usepackage[english]{babel}
+\addto\captionsenglish{
+  \renewcommand{\contentsname}%
+    {Ekutumam}%
+  \renewcommand{\partname}%
+    {Tel}%
+  \renewcommand{\chaptername}%
+    {Zsang}%
+}
+
+\title{Laskuszirulivre}
+\author{Zsiyozsin}
+\date{05d. 09m. 2023t.--}
+
+% localisation
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter*{Haszitel}
+\input{szirutel/haszitel.tex}
+
+\part{Lasku au Adzsaber}
+\input{szirutel/adzsaber/01-nis-razdai.tex}
+
+\part{Faltropos}
+\end{document}

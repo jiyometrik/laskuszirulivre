@@ -35,6 +35,9 @@
 	\addcontentsline{toc}{chapter}{#1}
 }
 
+\definecolor{honeydew}{HTML}{E2EFDE}
+\definecolor{HoneyDew}{HTML}{9EA79B}
+
 \usepackage[most]{tcolorbox}
 \tcbset{
 	breakable,
@@ -47,50 +50,23 @@
 	left=2pt,
 	right=2pt,
 	sharp corners,
-	boxrule=0pt,
+	% boxrule=0pt,
 	frame hidden,
 }
 
-\declaretheoremstyle[
-	%spaceabove=.5\thm@preskip,
-	%spacebelow=.5\thm@postskip,
-	%headfont=\normalfont\bfseries,
-	%notefont=\normalfont, notebraces={ (}{)},
-	%bodyfont=\small,
-	%headformat={\NAME\space\NUMBER\space\NOTE},
-	headpunct={},
-	postheadspace={.5em plus .1em minus .1em},
-	%prefoothook={\hfill\qedsymbol}
-	%refname={theorem,theorems},
-	%Refname={Theorem,Theorems},
-]{lyenszi}
-
-\definecolor{honeydew}{HTML}{E2EFDE}
-
-\theoremstyle{exercise}
-\declaretheoremstyle[
-	headpunct={},
-	postheadspace={.5em plus .1em minus .1em},
-]{lyenszi}
-\declaretheorem[
-	name=Lyenszi,
-	%refname={exercise,exercises},
-	refname={Lyenszi,Lyenszi},
-	Refname={Lyenszi,Lyenszi},
-	numberwithin=section,
-]{lyenszi}
-\tcolorboxenvironment{lyenszi}{
+\newtcolorbox[auto counter, number within=chapter]{tatoeba}[1][]{%
+	title=Tatoeba~\thetcbcounter,
+	fonttitle=\bfseries\sffamily,
+	enhanced,
+	breakable,
 	colback=honeydew,
+	colbacktitle=HoneyDew,
+	coltitle=black,
 }
-
 
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
 	breaklinks=true,
 	linkcolor=blue,
-	% filecolor=magenta,      
-	% urlcolor=cyan,
-	% pdftitle={Overleaf Example},
-	% pdfpagemode=FullScreen,
 }

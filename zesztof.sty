@@ -15,12 +15,6 @@
 
 \usepackage{microtype}
 
-% \usepackage{gillius}
-
-% \usepackage{fbb}
-% \usepackage{cabin}
-% \usepackage{cochineal}
-
 \def\bf#1{\textbf{#1}}
 \def\it#1{\textit{#1}}
 
@@ -33,51 +27,60 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\usepackage[most]{tcolorbox}
-\newcounter{tatoeba}
-\def\exampletext{Tatoeba}
-\NewDocumentEnvironment{tatoeba}{ O{} }{
-	\colorlet{colexam}{red!55!black}
-	\newtcolorbox[use counter=tatoeba]{tatoebabox}{%
-		empty,% Empty previously set parameters
-		title={\exampletext\space\thechapter.\thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
-		attach boxed title to top left,
-		minipage boxed title,
-		boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
-		coltitle=colexam,fonttitle=\bfseries\sffamily,
-		before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
-		before upper=\csname @totalleftmargin\endcsname0pt,
-		overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-		overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-		overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
-		overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
-	}
-	\begin{tatoebabox}
-		}{
-	\end{tatoebabox}\endlist
+\newcommand*{\mathsect}[3][section]{\csname#1\endcsname[\texorpdfstring{#2}{#3}]{{\boldmath #2}}}
+
+\newcommand{\silentchapter}[1]{
+	\chapter*{#1}
+	\markboth{#1}{#1}
+	\addcontentsline{toc}{chapter}{#1}
 }
 
-\newcounter{svarna}
-\def\answertext{Svarna}
-\NewDocumentEnvironment{svarna}{ O{} }{
-	\colorlet{colexam}{blue!55!black}
-	\newtcolorbox[use counter=svarna]{svarnabox}{%
-		empty,% Empty previously set parameters
-		title={\answertext\space\thechapter.\thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
-		attach boxed title to top left,
-		minipage boxed title,
-		boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
-		coltitle=colexam,fonttitle=\bfseries\sffamily,
-		before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
-		before upper=\csname @totalleftmargin\endcsname0pt,
-		overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-		overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-		overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
-		overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
-	}
-	\begin{svarnabox}
-		}{
-	\end{svarnabox}\endlist
+\usepackage[most]{tcolorbox}
+\tcbset{
+	breakable,
+	before skip=\topskip,
+	after skip=\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	top=5pt,
+	bottom=3pt,
+	left=2pt,
+	right=2pt,
+	sharp corners,
+	boxrule=0pt,
+	frame hidden,
+}
+
+\declaretheoremstyle[
+	%spaceabove=.5\thm@preskip,
+	%spacebelow=.5\thm@postskip,
+	%headfont=\normalfont\bfseries,
+	%notefont=\normalfont, notebraces={ (}{)},
+	%bodyfont=\small,
+	%headformat={\NAME\space\NUMBER\space\NOTE},
+	headpunct={},
+	postheadspace={.5em plus .1em minus .1em},
+	%prefoothook={\hfill\qedsymbol}
+	%refname={theorem,theorems},
+	%Refname={Theorem,Theorems},
+]{lyenszi}
+
+\definecolor{honeydew}{HTML}{E2EFDE}
+
+\theoremstyle{exercise}
+\declaretheoremstyle[
+	headpunct={},
+	postheadspace={.5em plus .1em minus .1em},
+]{lyenszi}
+\declaretheorem[
+	name=Lyenszi,
+	%refname={exercise,exercises},
+	refname={Lyenszi,Lyenszi},
+	Refname={Lyenszi,Lyenszi},
+	numberwithin=section,
+]{lyenszi}
+\tcolorboxenvironment{lyenszi}{
+	colback=honeydew,
 }
 
 
@@ -85,7 +88,7 @@
 \hypersetup{
 	colorlinks=true,
 	breaklinks=true,
-	% linkcolor=blue,
+	linkcolor=blue,
 	% filecolor=magenta,      
 	% urlcolor=cyan,
 	% pdftitle={Overleaf Example},

@@ -1,5 +1,4 @@
 \documentclass[fontsize=12pt,paper=a4,twoside,numbers=noenddot]{scrbook}
-% \documentclass{willowtreebook}
 \usepackage{zesztof}
 \usepackage[english]{babel}
 \addto\captionsenglish{
@@ -11,17 +10,19 @@
     {Zsang}%
 }
 
+\usepackage{scrlayer-scrpage}
+% \ihead[]
+\pagestyle{scrheadings}
+
 \title{Laskuszirulivre}
 \author{Zsiyozsin}
 \date{05d. 09m. 2023t.--}
-
-% localisation
 
 \begin{document}
 \maketitle
 \tableofcontents
 
-\chapter*{Haszitel}
+\silentchapter{Haszitel}
 \input{szirutel/haszitel.tex}
 
 \part{Lasku au Adzsaber}

@@ -1,6 +1,5 @@
 \ProvidesPackage{zesztof}
-\RequirePackage{fontspec}
-\RequirePackage{amsfonts, amsthm, amsmath, amssymb}
+% \RequirePackage{amsfonts, amsthm, amsmath, amssymb}
 \RequirePackage{mathtools}
 
 \RequirePackage{siunitx}
@@ -9,7 +8,11 @@
 \RequirePackage{tikz-cd}
 \RequirePackage[usenames,dvipsnames,table]{xcolor}
 
+% \RequirePackage[quiet]{mathspec}
+\RequirePackage{fontspec}
 \setmainfont{Libertinus Serif}
+% \setmathsfont{Libertinus Math}
+\setsansfont{Libertinus Sans}
 \setmonofont{Source Code Pro}
 \RequirePackage{microtype}
 
@@ -36,56 +39,94 @@
 	\addcontentsline{toc}{chapter}{#1}
 }
 
-\addtokomafont{title}{\color{Maroon}}
-\addtokomafont{part}{\color{Maroon}}
-\addtokomafont{chapter}{\color{Maroon}}
-\addtokomafont{section}{\color{Maroon}}
-\addtokomafont{subsection}{\color{Maroon}}
-\addtokomafont{subsubsection}{\color{Maroon}}
-\addtokomafont{paragraph}{\color{Maroon}}
-\addtokomafont{captionlabel}{\color{Blue}}
-\addtokomafont{pagenumber}{\color{Maroon}}
+\def\tcb@restore@footnote{%
+  \def\@mpfn{footnote}%
+  \def\thempfn{\arabic{footnote}}%
+  \let\@footnotetext\tcb@footnote@collect
+}
 
-\definecolor{honeydew}{HTML}{E2EFDE}
-% \definecolor{HoneyDew}{HTML}{9EA79B}
+% collect footnote text
+\long\def\tcb@footnote@collect#1{%
+  % expand \@thefnmark before appending before app to \tcb@footnote@acc
+  \expandafter\gappto\expandafter\tcb@footnote@acc\expandafter{%
+    \expandafter\footnotetext\expandafter[\@thefnmark]{#1}%
+  }%
+}
+
+\def\tcb@footnote@use{%
+  \tcb@footnote@acc
+  \global\let\tcb@footnote@acc\@empty
+}
+\global\let\tcb@footnote@acc\@empty
+
+% \addtokomafont{title}{\color{Crimson!50!black}}
+% \addtokomafont{part}{\color{Crimson}}
+% \addtokomafont{chapter}{\color{Crimson}}
+% \addtokomafont{section}{\color{Crimson}}
+% \addtokomafont{subsection}{\color{Crimson}}
+% \addtokomafont{subsubsection}{\color{Crimson}}
+% \addtokomafont{paragraph}{\color{Crimson}}
+% \addtokomafont{captionlabel}{\color{Crimson}}
+% \addtokomafont{pagenumber}{\color{Crimson}}
 
 \RequirePackage[most]{tcolorbox}
 \tcbset{
 	breakable,
-	before skip=\topskip,
-	after skip=\topskip,
-	left skip=0pt,
-	right skip=0pt,
-	top=8pt,
-	bottom=4pt,
+	before skip=4mm,
+	after skip=4mm,
+	left skip=2pt,
+	right skip=2pt,
+	toptitle=2mm,
+	bottomtitle=1mm,
+	bottom=2mm,
 	left=2pt,
 	right=2pt,
-	sharp corners,
 	boxrule=0pt,
-	frame hidden,
+	bottomrule=1pt,
+	toprule=1pt,
+	sharp corners,
+  every box/.style={
+    before upper pre=\tcb@restore@footnote
+  },
+  every box on layer 1/.append style={
+    after app=\tcb@footnote@use
+  }
 }
 
-\newtcolorbox[auto counter, number within=chapter]{tatoeba}[1][]{%
+\newtcolorbox[auto counter, number within=chapter]{tatoeba}{%
 	title=Tatoeba~\thetcbcounter,
 	fonttitle=\bfseries\sffamily,
 	enhanced,
 	breakable,
-	colback=honeydew,
-	colbacktitle=honeydew,
+	colback=MidnightBlue!10!white,
+	colbacktitle=MidnightBlue!10!white,
+	coltitle=black,
+}
+
+\newtcolorbox[auto counter, number within=chapter]{svarna}{%
+	title=Svarna~\thetcbcounter,
+	fonttitle=\bfseries\sffamily,
+	enhanced,
+	breakable,
+	colback=OliveGreen!10!white,
+	colbacktitle=OliveGreen!10!white,
+	coltitle=black,
+}
+
+\newtcolorbox[auto counter, number within=chapter]{lyenszinen}{%
+	title=Lyenszinen~\thetcbcounter,
+	fonttitle=\bfseries\sffamily,
+	enhanced,
+	breakable,
+	colback=Rhodamine!10!white,
+	colbacktitle=Rhodamine!10!white,
 	coltitle=black,
 }
 
 \RequirePackage{hyperref}
 \hypersetup{
-	allcolors=DarkGreen,
-	%anchorcolor=Red,
-	%citecolor=DarkOrange!70!black,
+	colorlinks=true,
+	linkcolor=Blue!80!black,
 	citecolor=OliveGreen,
-	filecolor=OliveGreen,
-	linkcolor=Blue,
-	% linkcolor=Black,
-	%pagecolor = Blue,
-	%menucolor=Red,
-	%runcolor=Red,
 	urlcolor=OliveGreen,
 }

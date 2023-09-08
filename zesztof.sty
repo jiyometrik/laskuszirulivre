@@ -7,12 +7,10 @@
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \RequirePackage{tikz-cd}
-\RequirePackage{xcolor}
+\RequirePackage[usenames,dvipsnames,table]{xcolor}
 
 \setmainfont{Libertinus Serif}
 \setmonofont{Source Code Pro}
-
-% \RequirePackage{AlegreyaSans}
 \RequirePackage{microtype}
 
 \providecommand{\seda}[1]{\textbf{#1}}
@@ -38,8 +36,18 @@
 	\addcontentsline{toc}{chapter}{#1}
 }
 
+\addtokomafont{title}{\color{Maroon}}
+\addtokomafont{part}{\color{Maroon}}
+\addtokomafont{chapter}{\color{Maroon}}
+\addtokomafont{section}{\color{Maroon}}
+\addtokomafont{subsection}{\color{Maroon}}
+\addtokomafont{subsubsection}{\color{Maroon}}
+\addtokomafont{paragraph}{\color{Maroon}}
+\addtokomafont{captionlabel}{\color{Blue}}
+\addtokomafont{pagenumber}{\color{Maroon}}
+
 \definecolor{honeydew}{HTML}{E2EFDE}
-\definecolor{HoneyDew}{HTML}{9EA79B}
+% \definecolor{HoneyDew}{HTML}{9EA79B}
 
 \RequirePackage[most]{tcolorbox}
 \tcbset{
@@ -48,12 +56,12 @@
 	after skip=\topskip,
 	left skip=0pt,
 	right skip=0pt,
-	top=5pt,
-	bottom=3pt,
+	top=8pt,
+	bottom=4pt,
 	left=2pt,
 	right=2pt,
 	sharp corners,
-	% boxrule=0pt,
+	boxrule=0pt,
 	frame hidden,
 }
 
@@ -63,15 +71,21 @@
 	enhanced,
 	breakable,
 	colback=honeydew,
-	colbacktitle=HoneyDew,
+	colbacktitle=honeydew,
 	coltitle=black,
-	boxsep=1pt,
-	top=2pt,bottom=2pt
 }
 
 \RequirePackage{hyperref}
 \hypersetup{
-	colorlinks=true,
-	breaklinks=true,
-	linkcolor=blue,
+	allcolors=DarkGreen,
+	%anchorcolor=Red,
+	%citecolor=DarkOrange!70!black,
+	citecolor=OliveGreen,
+	filecolor=OliveGreen,
+	linkcolor=Blue,
+	% linkcolor=Black,
+	%pagecolor = Blue,
+	%menucolor=Red,
+	%runcolor=Red,
+	urlcolor=OliveGreen,
 }

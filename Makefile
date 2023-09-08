@@ -4,6 +4,10 @@ pdf x:
 	latexmk ${FILE}.tex -bibtex
 	latexmk -c
 
+quiet q:
+	latexmk ${FILE}.tex -bibtex -quiet
+	latexmk -c
+
 view v:
 	open ${FILE}.pdf
 

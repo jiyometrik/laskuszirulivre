@@ -3,34 +3,34 @@
 \RequirePackage{amsfonts, amsthm, amsmath, amssymb}
 \RequirePackage{mathtools}
 
-\usepackage{siunitx}
-\usepackage{pgfplots}
+\RequirePackage{siunitx}
+\RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \RequirePackage{tikz-cd}
 \RequirePackage[usenames,dvipsnames,table]{xcolor}
 
-% \setmainfont{Libertinus Serif}
-% \setmonofont{Source Code Pro}
-% \setmainfont{Asana Math}
-\RequirePackage{libertinus-otf}
-\RequirePackage[scaled=.9]{sourcecodepro}
+\setmainfont{Libertinus Serif}
+\setmonofont{Source Code Pro}
 \RequirePackage{microtype}
 
-\def\bf#1{\textbf{#1}}
-\def\it#1{\textit{#1}}
+\providecommand{\seda}[1]{\textbf{#1}}
+\providecommand{\vikti}[1]{\textit{#1}}
 
-\def\bN{\mbb{N}}
-\def\bC{\mbb{C}}
-\def\bR{\mbb{R}}
-\def\bQ{\mbb{Q}}
-\def\bZ{\mbb{Z}}
+\providecommand{\bN}{\mbb{N}}
+\providecommand{\bC}{\mbb{C}}
+\providecommand{\bR}{\mbb{R}}
+\providecommand{\bQ}{\mbb{Q}}
+\providecommand{\bZ}{\mbb{Z}}
 
 \RequirePackage{setspace}
 \onehalfspacing
 
-\newcommand*{\mathsect}[3][section]{\csname#1\endcsname[\texorpdfstring{#2}{#3}]{{\boldmath #2}}}
+\providecommand{\@mathsect}[3][section]{\csname#1\endcsname[\texorpdfstring{#2}{#3}]{{\boldmath #2}}}
+\providecommand{\msection}[2]{\@mathsect[section]{#1}{#2}}
+\providecommand{\msubsection}[2]{\@mathsect[subsection]{#1}{#2}}
+\providecommand{\msubsubsection}[2]{\@mathsect[subsubsection]{#1}{#2}}
 
-\newcommand{\silentchapter}[1]{
+\providecommand{\silentchapter}[1]{
 	\chapter*{#1}
 	\markboth{#1}{#1}
 	\addcontentsline{toc}{chapter}{#1}

@@ -1,20 +1,35 @@
 \ProvidesPackage{zesztof}
 
+% ---------
+% laskukaku
+% ---------
 \RequirePackage{amsfonts, amsthm, amsmath, amssymb}
 \RequirePackage{mathtools}
 
+% --------------------
+% farzapol + laskuriso
 \RequirePackage{siunitx}
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\RequirePackage[usenames, dvipsnames, table]{xcolor}
+
+% -----
+% varje
+% -----
+\RequirePackage{xcolor}
+\definecolor{zedvera}{RGB}{0, 0, 90}
+\definecolor{midori}{RGB}{187, 219, 155}
+\definecolor{gris}{RGB}{167, 162, 169}
 
 \RequirePackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
-\setsansfont{Libertinus Sans}
+\setsansfont{TeX Gyre Heros}
 \setmathfont{Asana Math}
 \setmonofont{Inconsolata}
 \RequirePackage{microtype}
 
+% ----------------
+% simpel dvaimanen
+% ----------------
 \providecommand{\ds}[1]{\textbf{#1}}
 \providecommand{\vk}[1]{\textit{#1}}
 \providecommand{\mono}[1]{\texttt{#1}}
@@ -32,7 +47,7 @@
 
 \providecommand{\tc}[1]{\left(#1\right)}
 \providecommand{\tl}[1]{\left[#1\right]}
-\providecommand{\tk}[1]{\left{#1\right}}
+\providecommand{\tx}[1]{\left\{#1\right\}}
 \providecommand{\gla}[1]{\left\langle#1\right\rangle} % gulak-sen
 \providecommand{\tum}[1]{\left|#1\right|} % tumam-sen
 \providecommand{\dva}[3]{#1\colon#2\mapsto#3} % dvaima
@@ -94,10 +109,10 @@
 	bottom=2mm,
 	left=2pt,
 	right=2pt,
-	% boxrule=0pt,
-	% bottomrule=1pt,
-	% toprule=1pt,
-	% sharp corners,
+	boxrule=0pt,
+	bottomrule=1pt,
+	toprule=1pt,
+	sharp corners,
 }
 
 \newtcolorbox[auto counter, number within=chapter]{tatoeba}{%
@@ -105,8 +120,8 @@
 	fonttitle=\bfseries\sffamily,
 	enhanced,
 	breakable,
-	colback=MidnightBlue!10!white,
-	colbacktitle=MidnightBlue!25!white,
+	colback=gris!25!white,
+	colbacktitle=gris!50!white,
 	coltitle=black,
 }
 
@@ -115,27 +130,32 @@
 	fonttitle=\bfseries\sffamily,
 	enhanced,
 	breakable,
-	colback=OliveGreen!10!white,
-	colbacktitle=OliveGreen!25!white,
+	colback=gris!25!white,
+	colbacktitle=gris!50!white,
 	coltitle=black,
 }
 
-\newtcolorbox[auto counter, number within=chapter]{lyenszinen}{%
-	title=Lyenszinen~\thetcbcounter,
+\newtcolorbox[auto counter, number within=chapter]{ljenszinen}{%
+	title=Ljenszinen~\thetcbcounter,
 	fonttitle=\bfseries\sffamily,
 	enhanced,
 	breakable,
-	colback=Rhodamine!10!white,
-	colbacktitle=Rhodamine!25!white,
+	colback=midori!50!white,
+	colbacktitle=midori,
 	coltitle=black,
 }
 
 \RequirePackage{hyperref}
 \hypersetup{
-	colorlinks=true,
-	linkcolor=Blue!80!black,
-	citecolor=OliveGreen,
-	urlcolor=OliveGreen,
+	hidelinks,
+	colorlinks,
+	breaklinks=true,
+	urlcolor=zedvera,
+	citecolor=zedvera,
+	linkcolor=zedvera,
+	bookmarksopen=false,
+	pdftitle={Laskuszirulivre},
+	pdfauthor={Zsijozsin},
 }
 
 \allowdisplaybreaks

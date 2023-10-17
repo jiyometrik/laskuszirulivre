@@ -1,35 +1,76 @@
-\PassOptionsToPackage{usenames,dvipsnames,table}{xcolor}
-\documentclass[usenames,dvipsnames,table,fontsize=12pt,paper=a4,numbers=noenddot]{scrbook}
-\usepackage{zesztof}
+\documentclass[12pt, a4paper]{legportokali}
 
 \usepackage[english]{babel}
+
 \addto\captionsenglish{
   \renewcommand{\contentsname}%
     {Ekutumam}%
+  \renewcommand{\listfigurename}%
+    {Risotumam}%
+  \renewcommand{\listtablename}%
+    {Skallatumam}%
   \renewcommand{\partname}%
     {Tel}%
   \renewcommand{\chaptername}%
     {Zsang}%
 }
 
-\usepackage{scrlayer-scrpage}
-% \ihead[]
-\setcounter{secnumdepth}{\chapternumdepth}
-\pagestyle{scrheadings}
+\usepackage{setspace}
 
-\title{Laskuszirulivre}
-\author{Zsiyozsin}
-\date{05d. 09m. 2023t.--}
+\hypersetup {
+	pdftitle={Laskuszirulivre},
+	pdfauthor={Zsijozsin},
+	pdfsubject={Laskusziru},
+	pdfcreator={LaTeX},
+}
+
+\definecolor{ocre}{RGB}{243, 102, 25} % Define the color used for highlighting throughout the book
+
+% \chapterimage{tsunaruga.jpg} % Chapter heading image
+\chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{6.75cm} % Default amount of vertical whitespace from the top margin to the start of the text on chapter pages
 
 \begin{document}
-\input{kochereforma.tex}
-\maketitle
+
+\input{dvaimanen/kochereforma.tex}
+\onehalfspacing
+
+\titlepage
+{\includegraphics[width=\paperwidth]{hinariso.pdf}}
+{
+	\centering\sffamily
+	{\Huge\bfseries Laskusziru per Pikkaszkolazsin \par}
+	\vspace{16pt}
+	{\LARGE na Viossa\par}
+	\vspace{24pt}
+	{\huge\bfseries Zsijozsin\par}
+}
+
+\thispagestyle{empty}
+~\vfill
+{
+	\noindent \copyright\ 2023 Zsijozsin \\
+		Licensed under the Creative Commons Attribution-NonCommercial 4.0 License (the ``License'').
+		You may not use this file except in compliance with the License. You may obtain a copy of the
+		License at \url{https://creativecommons.org/licenses/by-nc-sa/4.0}. Unless required by applicable
+		law or agreed to in writing, software distributed under the License is distributed on an
+		\textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied.
+		See the License for the specific language governing permissions and limitations under the License. \\
+	\textit{Ens Verszo, 8s-mwai 2023-toszi}
+}
+
+\pagestyle{empty}
 \tableofcontents
+\listoffigures
+\listoftables
 
-\include{szirutel/haszitel}
+\pagestyle{fancy}
+\cleardoublepage
 
-\part{Lasku au Adzsaber}
-\include{szirutel/adzsaber/01-nis-razdai}
+\include{szirutel/andra/hazsitel}
 
-\part{Faltropos}
+\part{Adzsaber}
+\chapterimage{orange1.jpg}
+\include{szirutel/adzsaber/01-nisrazdai}
+
 \end{document}

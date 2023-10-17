@@ -1,11 +1,11 @@
 FILE=main
 
-pdf x:
-	latexmk ${FILE}.tex -bibtex
+pdf .:
+	latexmk ${FILE}.tex -quiet
 	latexmk -c
 
-quiet q:
-	latexmk ${FILE}.tex -bibtex -quiet
+debug d:
+	latexmk ${FILE}.tex 
 	latexmk -c
 
 view v:

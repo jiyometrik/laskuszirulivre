@@ -71,7 +71,7 @@
 
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{Asana Math}
-\setsansfont{Source Sans 3}
+\setsansfont{Clear Sans}
 \setmonofont{DejaVu Sans Mono}
 
 \RequirePackage{microtype} % Improve typography
@@ -550,7 +550,7 @@
 	amsthm
 } % For math equations, theorems, symbols, etc
 
-\renewcommand{\qedsymbol}{$\blacksquare$} % Redefine the QED symbol to be a filled square vs. the default unfilled square
+\renewcommand{\qedsymbol}{\(\blacksquare\)} % Redefine the QED symbol to be a filled square vs. the default unfilled square
 
 %------------------------------------------------
 
@@ -618,13 +618,13 @@
 
 % Orange theorem number and optional black title with no padding above and below
 \theoremstyle{ocrenumbox}
-\newtheorem{theoremeT}{Theorem}[chapter] % Theorems, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
+\newtheorem{theoremT}{Theorem}[chapter] % Theorems, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 \newtheorem{problem}{Problem}[chapter] % Problems, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
-\newtheorem{exerciseT}{Exercise}[chapter] % Exercises, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
+\newtheorem{exerciseT}{Ljenszina}[chapter] % Exercises, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 
 % Black theorem number and optional black title no padding above and below
 \theoremstyle{blacknumex}
-\newtheorem{exampleT}{Example}[chapter] % Examples, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
+\newtheorem{exampleT}{Tatoeba}[chapter] % Examples, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 \newtheorem{notation}{Notation}[chapter] % Notations, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 \newtheorem{vocabulary}{Vocabulary}[chapter] % Vocabularies, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 
@@ -709,11 +709,29 @@
 	rightmargin=0cm % Outside right margin width
 ]{cBox}
 
+\newmdenv[
+	skipabove=7pt, % Whitespace above box
+	skipbelow=7pt, % Whitespace below box
+	rightline=true, % Right line visible
+	leftline=false, % Left line visible
+	topline=false, % Top line visible
+	bottomline=false, % Bottom line visible
+	linecolor=ocre, % Line color
+	linewidth=4pt, % Line width
+	backgroundcolor=ocre!10, % Background color
+	innerleftmargin=5pt, % Inside left margin width
+	innerrightmargin=5pt, % Inside right margin width
+	innertopmargin=5pt, % Inside top margin height
+	innerbottommargin=5pt, % Inside bottom margin height
+	leftmargin=0cm, % Outside left margin width
+	rightmargin=0cm % Outside right margin width
+]{egBox}
+
 % Creates an environment for each type of theorem and assigns it a theorem text style from the THEOREM STYLES block above and a colored box from above
-\newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
+\newenvironment{theorem}{\begin{tBox}\begin{theoremT}}{\end{theoremT}\end{tBox}}
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
-\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
+\newenvironment{example}{\begin{egBox}\begin{exampleT}}{\end{exampleT}\end{egBox}}
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
 
 %----------------------------------------------------------------------------------------
@@ -726,7 +744,7 @@
 	\begin{adjustwidth}{35pt}{25pt} % Left and right padding
 		\hspace{-2.5pt}%
 		\begin{tikzpicture}[overlay]
-			\node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=3pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{R}}; % Orange R in a circle
+			\node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=3pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{!}}; % Orange R in a circle
 		\end{tikzpicture}
 		\advance\baselineskip -1pt% Reduce line spacing
 		}{%
@@ -738,6 +756,9 @@
 %----------------------------------------------------------------------------------------
 
 \RequirePackage{tikz} % Required for drawing custom shapes and positioning elements absolutely on the page
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\RequirePackage{subfig}
 
 \providecommand{\silentchapter}[1]{
 	\chapter*{#1}

@@ -1,0 +1,167 @@
+\chapter{Laskudvaima igne Nis-razdai}
+
+% Lesteatai
+\section{Lesteatai}
+
+\subsection{Laskudvaima---ka he?}
+
+Long gasze kartezsjana, laskufesta na mellan fu impla \(x\) au \(y\) dekti mahasejena mit laskuriso.
+Vi poszosidan laskuriso fu jokk laskudvaima igne ens-razdai: \(y = mx + c\), awen laskudvaima igne
+nis-razdai: \(y = ax^2 + bx + c\). Da se ka laskuriso per \(y = mx + c\) sen i, awen laskuriso per
+\(y = ax^2 + bx + c\) tolon i (Riso~\ref{fig:sen-au-tolon}).
+
+\begin{figure}[htpb]
+  \centering
+  \hfill
+  \subfloat[\centering Sen \(y = x\).]{{
+    \begin{tikzpicture}
+      \begin{axis}[axis lines=center, xlabel=\(x\), ylabel=\(y\)]
+        \addplot[color=blue, domain=-3:3]{x};
+      \end{axis}
+    \end{tikzpicture}
+  }}
+  \hfill
+  \subfloat[\centering Tolon \(y = x^2\).]{{
+    \begin{tikzpicture}
+      \begin{axis}[axis lines=center, xlabel=\(x\), ylabel=\(y\)]
+        \addplot[color=blue, domain=-3:3]{x^2};
+      \end{axis}
+    \end{tikzpicture}
+  }}
+  \hfill
+  \caption{Sen au tolon.}
+  \label{fig:sen-au-tolon}
+\end{figure}
+
+\begin{remark}
+  Laskudvaima deki sejena na \vk{alplas}. Tszihou fu 
+  ngazurikrais, \(T\), deki kakujena midt laskudvaima fu pikkatai
+  fu ngazurikrais \(r\)---asoko laskudvaima ti ka? 
+\end{remark}
+
+
+Per rjoho laskufesta, tont igneanta \(x\) jam mono en eksosada \(y\).
+Afto fal fu laskufesta haisajena \ds{laskudvaima}.
+
+Vi bruk kakutropos \(y = f\tc{x}\): imina ka \(y\) laskudvaima medt \(x\) i.
+Per nisrazdai laskudvaima medt \(x\), vi kakuti
+\(f \tc{x} = ax^2 + bx + c\). \footnote{Na \vk{nis-razdai} laskudvaima
+	\(f \tc{x} = ax^2 + bx + c\), \(a \neq 0\). Naze takk?}
+Najang, vi kakuti ensrazdai laskudvaima medt \(x\) mit \(f \tc{x} = mx + c\).
+
+Vi deki finna atai fu \(f \tc{x}\) midt anta jokk \(x\)-atai adzsaberfesta made.
+Na tatoeba, atai fu \(f \tc{x} = x + 1\) koske \(x = -2\) ti antajena komsa: \(f \tc{x} = -2 + 1 = -1\).
+
+Li \(x > 0\), laskudvaima \(f \tc{x} = x + 1\) deki antati atai ttb. \(\frac{5}{2}\), \(5.1\), os \(10\) auau.
+Vi deki mahase al absolutna gviratai fu \(x\) koske \(x > 0\) medt \ds{bizsjaunafras}: \(f \tc{x} > 1\).
+
+\begin{example}
+  Li \(f\left(x\right) = 2x^2 - 4\), \(f\tc{0} = 2{\tc{0}}^2 - 4 = -4\). Awen, grun
+  \(x^2 \geq 0\) per al gviratai fu \(x\), \(2x^2 \geq 0\) awen. Dakara,
+  \(2x^2 - 4 \geq -4\) per al gviratai fu \(x\).
+\end{example}
+
+\subsection{Lesteatai Polfal}
+
+Per laskudvaima \(f \tc{x} = x^2 - 4\), \(f\tc{x} \geq - 4\) prosta medt anse. De, vi deki hanu
+ka \ds{lesteatai} (\vk{lesteminusatai} her) fu \(f\tc{x}\) \(-4\) i. Mena, hur ti
+\(g \tc{x} = x^2+6x-4\)? Hur vi finnati al absolutna gviratai fu \(x\) per afto laskudvaima?
+Awen, dekiwe vi hanu li afto laskudvaima har lesteplus- os lesteminusatai?
+
+Per finna al absolutna gviratai fu \(x\) na \(g \tc{x}=x^2+6x-4\), vi deki polfalòze afto
+laskudvaima \vk{lesteatai polfal} made: \(g \tc{x} = a{\tc{x-h}}^2+k\), daper
+\(h\) au \(k\) pollasku i. \(k\) lesteatai fu laskudvaima i, au \(h\) atai fu \(x\) koske \(f \tc{x}\)
+na leste i.
+
+Na ens, vi finnati \(a^2 + 2ab + b^2\)-likk polfal, grun sore ngazuri-nis-razdai laskufraz i.
+Razlasku fu \(x\)-impla dekti parjadena na \(2xy\)-fal, daper \(y\) gvirlasku i.
+Dakara, grun \(b^2\)-impla altid gvirlasku i, tszerti sore na ni tel, jugentti ens tel ngazuri-nis-razdai
+laskufraz ignemade, de nasi nis tel ekso made.
+
+\begin{example}
+  Li \(f\left(x\right) = x^2 - 6x + 8\), 
+  \begin{align*}
+    x^2 - 6x + 8 &= x^2 - 2 \times 3 \times x + 8 \\
+    &= x^2 - 2 \times 3 \times x + 3^2 - 3^2 + 8 \\
+    &= {\tc{x - 3}}^2 - 3^2 + 8 \\
+    &= {\tc{x - 3}}^2 - 1
+  \end{align*}
+  Dakara, grun \({\tc{x - 3}}^2 \geq 0\) per al gviratai fu \(x\),
+  \({\tc{x - 3}}^2 - 1 \geq - 1\). Lesteminusatai fu \(f\tc{x}\) \(-1\) i,
+  au sore slutszati li \(x = 3\).
+\end{example}
+
+Li vi vahati laskuriso fu laskudvaima, vi seki ka \ds{lestepikk}---pikk
+ka tolon kawari estrela---na \(\tc{h, k}\) i.
+
+\begin{example}
+  Per tolon \(y = x^2 + 3x + 4\),
+  \begin{align*}
+    y &= x^2 + 3x + 4 \\
+    &= x^2 + 2 \times \frac{3}{2} \times x + 4\\
+    &= x^2 + 2 \times \frac{3}{2} \times x + {\tc{\frac{3}{2}}}^2 - {\tc{\frac{3}{2}}}^2 + 4\\
+    &= {\tc{x + \frac{3}{2}}}^2 - {\tc{\frac{3}{2}}}^2 + 4 \\
+    &= {\tc{x + \frac{3}{2}}}^2 + \frac{7}{4} \\
+    &= {\tl{x - \tc{- \frac{3}{2}}}}^2 + \frac{7}{4}
+  \end{align*}
+
+  Dakara, vi wenanki ka lestepikk fu afto tolon na \(\tc{-\frac{3}{2}, \frac{7}{4}}\) i. Da se ka
+  laskuriso awen mki ka lestepikk sama i (Riso~\ref{fig:3274tolon}).
+  
+
+\end{example}
+
+  \begin{figure}[htpb]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[axis lines=center, xlabel=\(x\), ylabel=\(y\)]
+        \addplot[color=blue, domain=-8:8]{x^2 + 3x + 4};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Laskuriso fu tolon \(y = x^2 + 3x + 4\).}
+    \label{fig:3274tolon}
+  \end{figure}
+
+Li razlasku fu \(x^2\)-impla nai \(1\) i, mus \vk{tszerlaskuòze} nisrazdai-lasku au ensrazdai-lasku na ens.
+
+% \begin{tatoeba}
+% 	Mahasetsa \(g \tc{x} = 3x^2 - 4x + 6\) polfal \(a {\tc{x-h}}^2 + k\) ignemade,
+% 	daper \(a\), \(h\) au \(k\) pollasku i. Dakara, finnatsa:
+% 	\begin{enumerate}
+% 		\item al absolutna gviratai fu \(g \tc{x}\).
+% 		\item lesteminus atai fu \(g \tc{x}\).
+% 		\item atai fu \(x\) koske \(g \tc{x}\) na leste i.
+% 	\end{enumerate}
+% \end{tatoeba}
+%
+% \begin{svarna}
+% 	\begin{align*}
+% 		3x^2 - 4x + 6 & = 3\alignfoot{Razlasku \(3\) tszerena ekso made.} \tc{x^2 - \frac{4}{3}x + 2}     \\
+% 		          & = 3 \tc{x^2 - 2 \cdot \frac{2}{3} \cdot x + 2}                                      \\
+% 		          & = 3 \tl{x^2 - 2 \cdot \frac{2}{3} \cdot x + \tc{\frac{2}{3}}^2 - \tc{\frac{2}{3}}^2 + 2} \\
+% 		          & = 3 \tl{\tc{x - \frac{2}{3}}^2 -\frac{4}{9} + 2}                                   \\
+% 		          & = 3 \tl{\tc{x - \frac{2}{3}}^2 +\frac{14}{9}}                                    \\
+% 		          & = 3 \tc{x - \frac{2}{3}}^2 + 3 \cdot \frac{14}{9}                                   \\
+% 		          & = 3 \tc{x - \frac{2}{3}}^2 + \frac{14}{3}
+% 	\end{align*}
+%
+% 	\begin{enumerate}
+% 		\item Grun \({\tc{x - \frac{2}{3}}}^2 \geq 0\),
+% 		      \({\tc{x + \frac{2}{3}}}^2 + \frac{14}{3} \geq \frac{14}{3}\) per al gviratai fu \(x\).
+% 		      Dakara, \(f \tc{x} \geq \frac{14}{3}\).
+% 		\item Lesteminus atai fu \(f \tc{x}\) \(\frac{14}{3}\) i.
+% 		\item Lesteminus atai fu \(f \tc{x}\) slutszati koske \({\tc{x - \frac{2}{3}}}^2 = 0\). Dakara,
+% 		      \begin{align*}
+% 			      x - \frac{2}{3} & = 0           \\
+% 			      x               & = \frac{2}{3}
+% 		      \end{align*}
+% 	\end{enumerate}
+% \end{svarna}
+%
+% \begin{ljenszinen}
+% 	Mahaklartsa naze \(x^2 - 2x + 6 \geq 5\) per al gviratai fu \(x\).
+% \end{ljenszinen}
+
+\begin{exerciseT}
+  ajeggpjawpoegjawpg
+\end{exerciseT}

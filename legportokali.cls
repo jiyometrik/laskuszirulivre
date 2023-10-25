@@ -72,7 +72,8 @@
 \adjustspacing = 2
 \newfontfeature{Microtypography}{protrusion = default; expansion = default}
 \directlua{fonts.protrusions.setups.default.factor = 0.5}
-\setmainfont[Microtypography, Ligatures=TeX]{erewhon}
+% \setmainfont[Microtypography, Ligatures=TeX]{erewhon}
+\setmainfont[Microtypography, Ligatures=TeX]{Source Sans 3}
 \setmathfont[Microtypography, Ligatures=TeX]{Erewhon Math}
 \setmonofont[Microtypography, Ligatures=TeX, SizeFeatures={Size=10}]{DejaVu Sans Mono}
 \setsansfont[Microtypography, Ligatures=TeX]{Clear Sans}

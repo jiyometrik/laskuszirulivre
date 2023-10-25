@@ -11,34 +11,47 @@ nis-razdai: \(y = ax^2 + bx + c\). Da se ka laskuriso per \(y = mx + c\) sen i, 
 \(y = ax^2 + bx + c\) tolon i (Riso~\ref{fig:sen-au-tolon}).
 
 \begin{figure}[htpb]
-  \centering
-  \hfill
-  \subfloat[\centering Sen \(y = x\).]{{
-    \begin{tikzpicture}
-      \begin{axis}[axis lines=center, xlabel=\(x\), ylabel=\(y\)]
-        \addplot[color=blue, domain=-3:3]{x};
-      \end{axis}
-    \end{tikzpicture}
-  }}
-  \hfill
-  \subfloat[\centering Tolon \(y = x^2\).]{{
-    \begin{tikzpicture}
-      \begin{axis}[axis lines=center, xlabel=\(x\), ylabel=\(y\)]
-        \addplot[color=blue, domain=-3:3]{x^2};
-      \end{axis}
-    \end{tikzpicture}
-  }}
-  \hfill
-  \caption{Sen au tolon.}
-  \label{fig:sen-au-tolon}
+	\centering
+	\hfill
+	\subfloat[\centering Sen \(y = x\).]{{
+				\begin{tikzpicture}
+					\begin{axis}[
+							axis lines=center,
+							xlabel=\(x\),
+							ylabel=\(y\),
+							width=0.4\textwidth,
+							no markers,
+							every axis plot/.append style={thick}
+						]
+						\addplot[color=ocre, domain=-3:3]{x};
+					\end{axis}
+				\end{tikzpicture}
+			}}
+	\hfill
+	\subfloat[\centering Tolon \(y = x^2\).]{{
+				\begin{tikzpicture}
+					\begin{axis}[
+							axis lines=center,
+							xlabel=\(x\),
+							ylabel=\(y\),
+							width=0.4\textwidth,
+							no markers,
+							every axis plot/.append style={thick}
+						]
+						\addplot[color=ocre, domain=-3:3]{x^2};
+					\end{axis}
+				\end{tikzpicture}
+			}}
+	\hfill
+	\caption{Sen au tolon.}
+	\label{fig:sen-au-tolon}
 \end{figure}
 
 \begin{remark}
-  Laskudvaima deki sejena na \vk{alplas}. Tszihou fu 
-  ngazurikrais, \(T\), deki kakujena midt laskudvaima fu pikkatai
-  fu ngazurikrais \(r\)---asoko laskudvaima ti ka? 
+	Laskudvaima deki sejena na \vk{alplas}. Tszihou fu
+	ngazurikrais, \(T\), deki kakujena midt laskudvaima fu pikkatai
+	fu ngazurikrais \(r\)---asoko laskudvaima ti ka?
 \end{remark}
-
 
 Per rjoho laskufesta, tont igneanta \(x\) jam mono en eksosada \(y\).
 Afto fal fu laskufesta haisajena \ds{laskudvaima}.
@@ -50,15 +63,15 @@ Per nisrazdai laskudvaima medt \(x\), vi kakuti
 Najang, vi kakuti ensrazdai laskudvaima medt \(x\) mit \(f \tc{x} = mx + c\).
 
 Vi deki finna atai fu \(f \tc{x}\) midt anta jokk \(x\)-atai adzsaberfesta made.
-Na tatoeba, atai fu \(f \tc{x} = x + 1\) koske \(x = -2\) ti antajena komsa: \(f \tc{x} = -2 + 1 = -1\).
+Na tatoeba, atai fu \(f \tc{x} = x + 1\) koske \(x = -2\) ti antajena komsa: \(f \tc{-2} = -2 + 1 = -1\).
 
 Li \(x > 0\), laskudvaima \(f \tc{x} = x + 1\) deki antati atai ttb. \(\frac{5}{2}\), \(5.1\), os \(10\) auau.
 Vi deki mahase al absolutna gviratai fu \(x\) koske \(x > 0\) medt \ds{bizsjaunafras}: \(f \tc{x} > 1\).
 
 \begin{example}
-  Li \(f\left(x\right) = 2x^2 - 4\), \(f\tc{0} = 2{\tc{0}}^2 - 4 = -4\). Awen, grun
-  \(x^2 \geq 0\) per al gviratai fu \(x\), \(2x^2 \geq 0\) awen. Dakara,
-  \(2x^2 - 4 \geq -4\) per al gviratai fu \(x\).
+	Li \(f\left(x\right) = 2x^2 - 4\), \(f\tc{0} = 2{\tc{0}}^2 - 4 = -4\). Awen, grun
+	\(x^2 \geq 0\) per al gviratai fu \(x\), \(2x^2 \geq 0\) awen. Dakara,
+	\(2x^2 - 4 \geq -4\) per al gviratai fu \(x\).
 \end{example}
 
 \subsection{Lesteatai Polfal}
@@ -79,89 +92,109 @@ Dakara, grun \(b^2\)-impla altid gvirlasku i, tszerti sore na ni tel, jugentti e
 laskufraz ignemade, de nasi nis tel ekso made.
 
 \begin{example}
-  Li \(f\left(x\right) = x^2 - 6x + 8\), 
-  \begin{align*}
-    x^2 - 6x + 8 &= x^2 - 2 \times 3 \times x + 8 \\
-    &= x^2 - 2 \times 3 \times x + 3^2 - 3^2 + 8 \\
-    &= {\tc{x - 3}}^2 - 3^2 + 8 \\
-    &= {\tc{x - 3}}^2 - 1
-  \end{align*}
-  Dakara, grun \({\tc{x - 3}}^2 \geq 0\) per al gviratai fu \(x\),
-  \({\tc{x - 3}}^2 - 1 \geq - 1\). Lesteminusatai fu \(f\tc{x}\) \(-1\) i,
-  au sore slutszati li \(x = 3\).
+	Li \(f\left(x\right) = x^2 - 6x + 8\),
+	\begin{align*}
+		f\tc{x} & = x^2 - 6x + 8                              \\
+		        & = x^2 - 2 \times 3 \times x + 8             \\
+		        & = x^2 - 2 \times 3 \times x + 3^2 - 3^2 + 8 \\
+		        & = {\tc{x - 3}}^2 - 3^2 + 8                  \\
+		        & = {\tc{x - 3}}^2 - 1
+	\end{align*}
+	Dakara, grun \({\tc{x - 3}}^2 \geq 0\) per al gviratai fu \(x\),
+	\({\tc{x - 3}}^2 - 1 \geq - 1\). Lesteminusatai fu \(f\tc{x}\) \(-1\) i,
+	au sore slutszati li \(x = 3\).
 \end{example}
 
 Li vi vahati laskuriso fu laskudvaima, vi seki ka \ds{lestepikk}---pikk
 ka tolon kawari estrela---na \(\tc{h, k}\) i.
 
 \begin{example}
-  Per tolon \(y = x^2 + 3x + 4\),
-  \begin{align*}
-    y &= x^2 + 3x + 4 \\
-    &= x^2 + 2 \times \frac{3}{2} \times x + 4\\
-    &= x^2 + 2 \times \frac{3}{2} \times x + {\tc{\frac{3}{2}}}^2 - {\tc{\frac{3}{2}}}^2 + 4\\
-    &= {\tc{x + \frac{3}{2}}}^2 - {\tc{\frac{3}{2}}}^2 + 4 \\
-    &= {\tc{x + \frac{3}{2}}}^2 + \frac{7}{4} \\
-    &= {\tl{x - \tc{- \frac{3}{2}}}}^2 + \frac{7}{4}
-  \end{align*}
-
-  Dakara, vi wenanki ka lestepikk fu afto tolon na \(\tc{-\frac{3}{2}, \frac{7}{4}}\) i. Da se ka
-  laskuriso awen mki ka lestepikk sama i (Riso~\ref{fig:3274tolon}).
-  
-
+	Per tolon \(y = x^2 + 3x + 4\),
+	\begin{align*}
+		y & = x^2 + 3x + 4                                                                          \\
+		  & = x^2 + 2 \times \frac{3}{2} \times x + 4                                               \\
+		  & = x^2 + 2 \times \frac{3}{2} \times x + {\tc{\frac{3}{2}}}^2 - {\tc{\frac{3}{2}}}^2 + 4 \\
+		  & = {\tc{x + \frac{3}{2}}}^2 - {\tc{\frac{3}{2}}}^2 + 4                                   \\
+		  & = {\tc{x + \frac{3}{2}}}^2 + \frac{7}{4}                                                \\
+		  & = {\tl{x - \tc{- \frac{3}{2}}}}^2 + \frac{7}{4}
+	\end{align*}
+	Dakara, vi wenanki ka lestepikk fu afto tolon na \(\tc{-\frac{3}{2}, \frac{7}{4}}\) i. Da se ka
+	laskuriso awen mki ka lestepikk sama i (Riso~\ref{fig:tolon134}).
 \end{example}
 
-  \begin{figure}[htpb]
-    \centering
-    \begin{tikzpicture}
-      \begin{axis}[axis lines=center, xlabel=\(x\), ylabel=\(y\)]
-        \addplot[color=blue, domain=-8:8]{x^2 + 3x + 4};
-      \end{axis}
-    \end{tikzpicture}
-    \caption{Laskuriso fu tolon \(y = x^2 + 3x + 4\).}
-    \label{fig:3274tolon}
-  \end{figure}
+\begin{figure}[htpb]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				axis lines=center,
+				xlabel=\(x\),
+				ylabel=\(y\),
+				ymin=0,
+				width=0.5\textwidth,
+				no markers,
+				every axis plot/.append style={thick}
+			]
+			\addplot[color=ocre, domain=-4:4] {x^2 + (x * 3) + 4};
+			\node[
+			color=ocre,
+			mark=*,
+			label={90:{\(\tc{-\frac{3}{2}, \frac{7}{4}}\)}},
+			circle,
+			fill,
+			inner sep=2pt
+			] at (axis cs:-1.5, 1.75) {};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Laskuriso fu tolon \(y = x^2 + 3x + 4\).}
+	\label{fig:tolon134}
+\end{figure}
 
-Li razlasku fu \(x^2\)-impla nai \(1\) i, mus \vk{tszerlaskuòze} nisrazdai-lasku au ensrazdai-lasku na ens.
+Li razlasku fu \(x^2\)-impla nai \(1\) i, mus \vk{tszerlaskuòze} razlasku
+asoko laskudvaima kara na ens.
 
-% \begin{tatoeba}
-% 	Mahasetsa \(g \tc{x} = 3x^2 - 4x + 6\) polfal \(a {\tc{x-h}}^2 + k\) ignemade,
-% 	daper \(a\), \(h\) au \(k\) pollasku i. Dakara, finnatsa:
-% 	\begin{enumerate}
-% 		\item al absolutna gviratai fu \(g \tc{x}\).
-% 		\item lesteminus atai fu \(g \tc{x}\).
-% 		\item atai fu \(x\) koske \(g \tc{x}\) na leste i.
-% 	\end{enumerate}
-% \end{tatoeba}
-%
-% \begin{svarna}
-% 	\begin{align*}
-% 		3x^2 - 4x + 6 & = 3\alignfoot{Razlasku \(3\) tszerena ekso made.} \tc{x^2 - \frac{4}{3}x + 2}     \\
-% 		          & = 3 \tc{x^2 - 2 \cdot \frac{2}{3} \cdot x + 2}                                      \\
-% 		          & = 3 \tl{x^2 - 2 \cdot \frac{2}{3} \cdot x + \tc{\frac{2}{3}}^2 - \tc{\frac{2}{3}}^2 + 2} \\
-% 		          & = 3 \tl{\tc{x - \frac{2}{3}}^2 -\frac{4}{9} + 2}                                   \\
-% 		          & = 3 \tl{\tc{x - \frac{2}{3}}^2 +\frac{14}{9}}                                    \\
-% 		          & = 3 \tc{x - \frac{2}{3}}^2 + 3 \cdot \frac{14}{9}                                   \\
-% 		          & = 3 \tc{x - \frac{2}{3}}^2 + \frac{14}{3}
-% 	\end{align*}
-%
-% 	\begin{enumerate}
-% 		\item Grun \({\tc{x - \frac{2}{3}}}^2 \geq 0\),
-% 		      \({\tc{x + \frac{2}{3}}}^2 + \frac{14}{3} \geq \frac{14}{3}\) per al gviratai fu \(x\).
-% 		      Dakara, \(f \tc{x} \geq \frac{14}{3}\).
-% 		\item Lesteminus atai fu \(f \tc{x}\) \(\frac{14}{3}\) i.
-% 		\item Lesteminus atai fu \(f \tc{x}\) slutszati koske \({\tc{x - \frac{2}{3}}}^2 = 0\). Dakara,
-% 		      \begin{align*}
-% 			      x - \frac{2}{3} & = 0           \\
-% 			      x               & = \frac{2}{3}
-% 		      \end{align*}
-% 	\end{enumerate}
-% \end{svarna}
-%
-% \begin{ljenszinen}
-% 	Mahaklartsa naze \(x^2 - 2x + 6 \geq 5\) per al gviratai fu \(x\).
-% \end{ljenszinen}
+\begin{remark}
+	Li razlasku fu \(x^2\) plus na \(0\), \ds{lesteminusatai} jamti. Ka slutszati
+	li razlasku fu \(x^2\) minus na \(0\)?
+\end{remark}
 
-\begin{exerciseT}
-  ajeggpjawpoegjawpg
-\end{exerciseT}
+\begin{example}
+	Per \(g\tc{x} = 2x^2 - 8x + 26\),
+	\begin{align*}
+		g\tc{x} & = 2x^2 - 8x + 26                                   \\
+		        & = 2\tc{x^2 - 4x + 13}                              \\
+		        & = 2\tc{x^2 - 2 \times 2 \times x + 13}             \\
+		        & = 2\tc{x^2 - 2 \times 2 \times x + 2^2 - 2^2 + 13} \\
+		        & = 2\tc{x^2 - 2 \times 2 \times x + 2^2 + 9}        \\
+		        & = 2{\tc{x - 2}}^2 + 2 \times 9                     \\
+		        & = 2{\tc{x - 2}}^2 + 18                             \\
+	\end{align*}
+	Dakara, lesteatai fu \(g\tc{x}\) \(18\) i, au sore slutszati koske
+	\(x = 2\). Na tolon \(y = g\tc{x}\), lestepikk na \(\tc{2, 18}\) i.
+\end{example}
+
+\begin{problem}
+Mahaklartsa naze \(x^2 - 2x + 6 \geq 5\)
+per al gviratai fu \(x\).
+\end{problem}
+
+\begin{exercise}
+	\begin{enumerate}
+		\item Li \(f\tc{x} = 2x^2 + 1\), finnatsa atai fu:
+		      \begin{enumerate}
+			      \item \(f\tc{3}\),
+			      \item \(f\tc{-2}\) au
+			      \item spesu fu \(f\tc{x}\) per al gviratai fu \(x\).
+		      \end{enumerate}
+		\item Ka lestepikk fu asoko tolon?
+		      \begin{enumerate}
+			      \item \(y = 2x^2 - 4x - 5\)
+			      \item \(y = -x^2 - 2x + 3\)
+			      \item \(y = 2 - 3x + 3x^2\)
+			      \item \(y = 3x + 4 - 2x^2\)
+			      \item \(y = -\frac{1}{2}x^2 - 3x + 5\)
+			      \item \(y = x^2 + 12x\)
+		      \end{enumerate}
+		\item Naze \(f\tc{x} = -x^2 + 4x - 7\) altid loplasku i?
+		\item Ka mellonsen fu tolon \(y = 3x^2 - 10x - 8\)?
+	\end{enumerate}
+\end{exercise}

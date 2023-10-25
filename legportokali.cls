@@ -54,7 +54,7 @@
 
 \geometry {
 	top=3cm, % Top margin
-	bottom=2.5cm, % Bottom margin
+	bottom=3cm, % Bottom margin
 	inner=3cm, % Inner margin (left on odd pages, right on even or left in oneside mode)
 	outer=3cm, % Outer margin (right on odd pages, left on even or right in oneside mode)
 	headsep=10pt, % Space from the top margin to the baseline of the header
@@ -68,13 +68,14 @@
 %	FONTS
 %----------------------------------------------------------------------------------------
 \RequirePackage{unicode-math}
-
-\setmainfont{TeX Gyre Pagella}
-\setmathfont{Asana Math}
-\setsansfont{Clear Sans}
-\setmonofont{DejaVu Sans Mono}
-
-\RequirePackage{microtype} % Improve typography
+\protrudechars = 2
+\adjustspacing = 2
+\newfontfeature{Microtypography}{protrusion = default; expansion = default}
+\directlua{fonts.protrusions.setups.default.factor = 0.5}
+\setmainfont[Microtypography, Ligatures=TeX]{erewhon}
+\setmathfont[Microtypography, Ligatures=TeX]{Erewhon Math}
+\setmonofont[Microtypography, Ligatures=TeX, SizeFeatures={Size=10}]{DejaVu Sans Mono}
+\setsansfont[Microtypography, Ligatures=TeX]{Clear Sans}
 
 %----------------------------------------------------------------------------------------
 %	HEADERS AND FOOTERS
@@ -591,7 +592,7 @@
 {} % Theorem head font
 {} % Punctuation after theorem head
 {0.25em} % Space after theorem head
-{\small\sffamily\bfseries{\raisebox{1.25pt}{\tiny\ensuremath{\blacksquare}}}~\thmname{#1}~\thmnumber{\@ifnotempty{#1}{}\@upn{#2}} % Theorem text (e.g. Theorem 2.1)
+{\small\sffamily\bfseries{\raisebox{1.25pt}{\tiny\(\blacksquare\)}}~\thmname{#1}~\thmnumber{\@ifnotempty{#1}{}\@upn{#2}} % Theorem text (e.g. Theorem 2.1)
 	\thmnote{\the\thm@notefont\sffamily\bfseries---~#3.\hspace{0.25em}}} % Optional theorem note
 
 %------------------------------------------------
@@ -619,7 +620,7 @@
 % Orange theorem number and optional black title with no padding above and below
 \theoremstyle{ocrenumbox}
 \newtheorem{theoremT}{Theorem}[chapter] % Theorems, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
-\newtheorem{problem}{Problem}[chapter] % Problems, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
+\newtheorem{problem}{Ljenszinen}[chapter] % Problems, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 \newtheorem{exerciseT}{Ljenszina}[chapter] % Exercises, the first argument is the theorem name, the second the theorem title used before the number and the third optional argument is whether to number under chapters (e.g. 2.1) or sections (e.g. 2.1.1)
 
 % Black theorem number and optional black title no padding above and below
@@ -657,7 +658,7 @@
 \newmdenv[
 	skipabove=7pt, % Whitespace above box
 	skipbelow=7pt, % Whitespace below box
-	rightline=false, % Right line visible
+	rightline=true, % Right line visible
 	leftline=true, % Left line visible
 	topline=false, % Top line visible
 	bottomline=false, % Bottom line visible
@@ -729,7 +730,16 @@
 
 % Creates an environment for each type of theorem and assigns it a theorem text style from the THEOREM STYLES block above and a colored box from above
 \newenvironment{theorem}{\begin{tBox}\begin{theoremT}}{\end{theoremT}\end{tBox}}
-\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
+\newenvironment{exercise}
+{
+  \begin{eBox}
+  \begin{exerciseT}
+  \\
+}
+{
+  \end{exerciseT}
+  \end{eBox}
+}
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
 \newenvironment{example}{\begin{egBox}\begin{exampleT}}{\end{exampleT}\end{egBox}}
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
@@ -757,7 +767,8 @@
 
 \RequirePackage{tikz} % Required for drawing custom shapes and positioning elements absolutely on the page
 \RequirePackage{pgfplots}
-\pgfplotsset{compat=1.9}
+\usetikzlibrary{calc}
+\pgfplotsset{compat=1.9, width=0.75\textwidth}
 \RequirePackage{subfig}
 
 \providecommand{\silentchapter}[1]{

@@ -58,7 +58,8 @@
 	inner=3cm, % Inner margin (left on odd pages, right on even or left in oneside mode)
 	outer=3cm, % Outer margin (right on odd pages, left on even or right in oneside mode)
 	headsep=10pt, % Space from the top margin to the baseline of the header
-	headheight=0.5cm, % Header height
+	% headheight=0.5cm, % Header height
+	headheight = 14.49998pt,
 	footskip=1.4cm, % Space from the bottom margin to the baseline of the footer
 	columnsep=1cm, % Horizontal space between columns when in two column mode
 	%showframe, % Uncomment to show how the type block is set on the page
@@ -76,7 +77,7 @@
 \setmainfont[Microtypography, Ligatures=TeX]{Source Sans 3}
 \setmathfont[Microtypography, Ligatures=TeX]{Erewhon Math}
 \setmonofont[Microtypography, Ligatures=TeX, SizeFeatures={Size=10}]{DejaVu Sans Mono}
-\setsansfont[Microtypography, Ligatures=TeX]{Clear Sans}
+\setsansfont[Microtypography, Ligatures=TeX]{Atkinson Hyperlegible}
 
 %----------------------------------------------------------------------------------------
 %	HEADERS AND FOOTERS
@@ -552,7 +553,7 @@
 	amsthm
 } % For math equations, theorems, symbols, etc
 
-\renewcommand{\qedsymbol}{\(\blacksquare\)} % Redefine the QED symbol to be a filled square vs. the default unfilled square
+% \renewcommand{\qedsymbol}{\(\blacksquare\)} % Redefine the QED symbol to be a filled square vs. the default unfilled square
 
 %------------------------------------------------
 
@@ -593,7 +594,7 @@
 {} % Theorem head font
 {} % Punctuation after theorem head
 {0.25em} % Space after theorem head
-{\small\sffamily\bfseries{\raisebox{1.25pt}{\tiny\(\blacksquare\)}}~\thmname{#1}~\thmnumber{\@ifnotempty{#1}{}\@upn{#2}} % Theorem text (e.g. Theorem 2.1)
+{\small\sffamily\bfseries{\raisebox{1.25pt}{\tiny}}~\thmname{#1}~\thmnumber{\@ifnotempty{#1}{}\@upn{#2}} % Theorem text (e.g. Theorem 2.1)
 	\thmnote{\the\thm@notefont\sffamily\bfseries---~#3.\hspace{0.25em}}} % Optional theorem note
 
 %------------------------------------------------
@@ -735,7 +736,6 @@
 {
   \begin{eBox}
   \begin{exerciseT}
-  \\
 }
 {
   \end{exerciseT}
@@ -795,7 +795,7 @@
 
 \providecommand{\tc}[1]{\left(#1\right)}
 \providecommand{\tl}[1]{\left[#1\right]}
-\providecommand{\tk}[1]{\left{#1\right}}
+\providecommand{\tk}[1]{\left\{#1\right\}}
 \providecommand{\gla}[1]{\left\langle#1\right\rangle} % gulak-sen
 \providecommand{\tum}[1]{\left|#1\right|} % tumam-sen
 \providecommand{\dva}[3]{#1\colon#2\mapsto#3} % dvaima

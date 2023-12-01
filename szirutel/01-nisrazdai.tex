@@ -50,7 +50,7 @@ nisrazdai: \(y = ax^2 + bx + c\). Da se ka laskuriso per \(y = mx + c\) sen i, a
 \begin{remark}
 	Laskudvaima deki sejena na \vk{alplas}. Tszihou fu
 	ngazurikrais, \(T\), deki kakujena midt laskudvaima fu pikkatai
-	fu ngazurikrais \(r\)---asoko laskudvaima ti ka?
+	fu ngazurikrais \(r\)---asoko laskudvaima, \(T\tc{r}\), ti ka?
 \end{remark}
 
 Per rjoho laskufesta, tont igneanta \(x\) jam mono en eksosada \(y\).
@@ -81,8 +81,8 @@ ka \ds{lesteatai} (\vk{lesteminusatai} her) fu \(f\tc{x}\) \(-4\) i. Mena, hur t
 \(g \tc{x} = x^2+6x-4\)? Hur vi finnati al absolutna gviratai fu \(x\) per afto laskudvaima?
 Awen, dekiwe vi hanu li afto laskudvaima har lesteplus- os lesteminusatai?
 
-Per finna al absolutna gviratai fu \(x\) na \(g \tc{x}=x^2+6x-4\), vi deki polfalòze afto
-laskudvaima \vk{lesteatai polfal} made: \(g \tc{x} = a{\tc{x-h}}^2+k\), daper
+Per finna al absolutna gviratai fu \(x\) na \(g\tc{x} = x^2 + 6x - 4\), vi deki polfalòze afto
+laskudvaima \vk{lesteatai polfal} made: \(g\tc{x} = a{\tc{x - h}}^2 + k\), daper
 \(h\) au \(k\) pollasku i. \(k\) lesteatai fu laskudvaima i, au \(h\) atai fu \(x\) koske \(f \tc{x}\)
 na leste i.
 
@@ -178,6 +178,7 @@ per al gviratai fu \(x\).
 \end{problem}
 
 \begin{exercise}
+	awjegajwwpegjawp \\
 	\begin{enumerate}
 		\item Li \(f\tc{x} = 2x^2 + 1\), finnatsa atai fu:
 		      \begin{enumerate}
@@ -202,9 +203,59 @@ per al gviratai fu \(x\).
 % Ragna
 \section{Ragna fu Nisrazdai Laskudvaima}
 
-Koske nisrazdai laskudvaima \(f\tc{x} = ax^2 + bx + c\) \(0\) i, 
+\subsection{Ragnafal na Laskuriso}
+Jam mono en pikk ka laskuriso fu nisrazdai laskudvaima
+kawarina strela. Afto pikk haisa \ds{gundopikk} (Riso~\ref{fig:gundopikk}).
+
+\begin{figure}[htpb]
+	\centering
+	\hfill
+	\subfloat[\centering Sen \(y = x\).]{{
+				\begin{tikzpicture}
+					\begin{axis}[
+							axis lines=center,
+							xlabel=\(x\),
+							ylabel=\(y\),
+							width=0.4\textwidth,
+							no markers,
+							every axis plot/.append style={thick}
+						]
+						\addplot[color=ocre, domain=-3:3]{x^2};
+					\end{axis}
+				\end{tikzpicture}
+			}}
+	\hfill
+	\subfloat[\centering Tolon \(y = x^2\).]{{
+				\begin{tikzpicture}
+					\begin{axis}[
+							axis lines=center,
+							xlabel=\(x\),
+							ylabel=\(y\),
+							width=0.4\textwidth,
+							no markers,
+							every axis plot/.append style={thick}
+						]
+						\addplot[color=ocre, domain=-3:3]{-x^2};
+					\end{axis}
+				\end{tikzpicture}
+			}}
+	\hfill
+	\caption{Gundopikk fu nisrazdai laskudvaima.}
+	\label{fig:gundopikk}
+\end{figure}
+
+
+Koske nisrazdai laskudvaima \(f\tc{x} = ax^2 + bx + c\) \(0\) i,
 vi sada nisrazdai laskufraz \(ax^2 + bx + c = 0\). Vi deki bruk
 laskufesta
 \[
-  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \]
+per finna ragna fu to laskufraz.
+
+\begin{remark}
+	Hur vi ti kawarina laskudvaima \(f\tc{x} = ax^2 + bx + c = 0\)
+	\(a{\tc{x - h}}^2 + k\)-likk polfal made?
+\end{remark}
+
+

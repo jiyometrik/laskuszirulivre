@@ -320,7 +320,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/latex,windows
-*.pdf
 TeX_files/syntax/__latexindent_temp.tex
 lexember2.md
 lexember3.md
